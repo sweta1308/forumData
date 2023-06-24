@@ -1,0 +1,16 @@
+.right-nav {
+    width: 20%;
+    position: fixed;
+    left: 80%;
+}
+
+.right-nav button {
+    margin: 0 10px;
+    background-color: rgb(206, 223, 250);
+    color: rgb(71, 141, 253);
+    padding: 15px;
+    font-weight: 700;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+}
