@@ -1,0 +1,16 @@
+.content-container {
+    display: flex;
+    position: relative;
+    background-color: rgb(243, 242, 252);
+    min-height: 100vh;
+}
+
+.main-container {
+    position: relative;
+    left: 20%;
+    width: 60%;
+}
+
+.post-content {
+    margin: 20px 0;
+}
