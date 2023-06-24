@@ -1,0 +1,39 @@
+.left-nav {
+  width: 20%;
+  padding: 20px 70px;
+  box-sizing: border-box;
+  position: fixed;
+  min-height: 100vh;
+}
+
+.links {
+  font-size: 20px;
+  cursor: pointer;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.links span {
+  margin-left: 10px;
+}
+
+.links:hover {
+    background-color: rgb(71, 141, 253);
+    color: white;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin-top: 330px;
+}
+
+.profile img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.profile div p {
+  margin-top: -20px;
+}
