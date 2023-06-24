@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router";
 import "./PostCard.css";
 import { useState } from "react";
+import { getPostDate } from "../../data/getPostDate";
+import { usePost } from "../../context/PostContext";
 
 export const PostCard = ({ userPost }) => {
   const {
@@ -12,11 +14,11 @@ export const PostCard = ({ userPost }) => {
     upvotes,
     downvotes,
     tags,
+    createdAt,
   } = userPost;
+  const { handleUpVote, handleDownVote } = usePost();
 
   const [bookmark, setBookmark] = useState(false);
-  const [upvote, setUpVote] = useState(upvotes);
-  const [downvote, setDownVote] = useState(downvotes);
 
   const navigate = useNavigate();
 
@@ -24,13 +26,13 @@ export const PostCard = ({ userPost }) => {
     <div className="post-container">
       <div className="votes">
         <i
-          onClick={() => setUpVote((prev) => prev + 1)}
+          onClick={() => handleUpVote(postId)}
           className="fa-solid fa-caret-up"
           style={{ color: "#639dfb" }}
         ></i>
-        <p>{upvote - downvote}</p>
+        <p>{upvotes - downvotes}</p>
         <i
-          onClick={() => setDownVote((prev) => prev + 1)}
+          onClick={() => handleDownVote(postId)}
           className="fa-solid fa-caret-down"
           style={{ color: "#bcbdbd" }}
         ></i>
@@ -39,7 +41,8 @@ export const PostCard = ({ userPost }) => {
         <div className="details">
           <img src={picUrl} alt="avatar" />
           <p>
-            <span>Posted By</span> @{username}
+            <span>Posted By</span> @{username}{" "}
+            <span>- {getPostDate(createdAt)}</span>
           </p>
         </div>
         <h1>{post}</h1>
