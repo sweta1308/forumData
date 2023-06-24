@@ -12,7 +12,7 @@ export const forumData = {
       post: "Join InvactHQ for MBA",
       postDescription:
         "Non programmers on my timeline. Attention! After placing 100+ programmers i in top Indian startups, I am thinking of coming up with a program for business roles as well. Interested in helping me build this course? Join me at Invact.",
-      upvotes: 10,
+      upvotes: 100,
       downvotes: 50,
       tags: ["mba", "business", "bootcamp"],
       createdAt: "2023-06-24T12:00:00Z",

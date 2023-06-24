@@ -15,7 +15,7 @@ export const PostProvider = ({ children }) => {
       )
     );
 
-  const handleLatestClick = () =>
+  const handleLatestClick = () => {
     setPostData((prev) =>
       [...prev].sort(
         (a, b) =>
@@ -23,17 +23,19 @@ export const PostProvider = ({ children }) => {
           getPostDate(b.createdAt).charAt(0)
       )
     );
+    console.log(postData)
+  };
 
   const handleUpVote = (postId) => {
     const updatePost = postData.map((post) =>
-      post.id === postId ? { ...post, upvotes: post.upvotes + 1 } : post
+      post.postId === postId ? { ...post, upvotes: post.upvotes + 1 } : post
     );
     setPostData(updatePost);
   };
 
   const handleDownVote = (postId) => {
     const updatePost = postData.map((post) =>
-      post.id === postId ? { ...post, downvotes: post.downvotes + 1 } : post
+      post.postId === postId ? { ...post, downvotes: post.downvotes + 1 } : post
     );
     setPostData(updatePost);
   };
