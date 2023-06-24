@@ -4,6 +4,7 @@ import { Navbar } from "../../Components/Navbar";
 import "./Singlepost.css";
 import { usePost } from "../../context/PostContext";
 import { PostCard } from "../../Components/PostCard/PostCard";
+import { getPostDate } from "../../data/getPostDate";
 
 export const SinglePost = () => {
   const navigate = useNavigate();
@@ -34,6 +35,7 @@ export const SinglePost = () => {
                   <div className="user-details">
                     <h2>{comment.name}</h2>
                     <p>@{comment.username}</p>
+                    <p> - {getPostDate(comment.createdAt)}</p>
                   </div>
                   <p className="reply">
                     Replying to <span>@{recentPost.username}</span>
